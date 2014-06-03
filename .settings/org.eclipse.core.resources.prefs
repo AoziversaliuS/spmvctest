@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//WebRoot/WEB-INF/view/registed.ftl=UTF-8
 encoding//WebRoot/WEB-INF/view/success.jsp=UTF-8
 encoding//WebRoot/WEB-INF/view/view.ftl=UTF-8
 encoding//WebRoot/index.jsp=UTF-8

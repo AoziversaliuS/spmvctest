@@ -9,13 +9,12 @@
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
 
   </head>
   
   <body>
-      进入到FreeMarker中
+      注册成功<br/>
+     用户名：${player.name} <br/>
+    密码：룺${player.passWord} <br/>
   </body>
 </html>

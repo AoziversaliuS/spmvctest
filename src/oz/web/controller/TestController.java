@@ -3,7 +3,9 @@ package oz.web.controller;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import oz.web.dao.IPlayerDao;
@@ -16,17 +18,29 @@ public class TestController {
 	@Resource
 	private IPlayerDao playerDao;
 	
-	@RequestMapping(value="/a")
-	public String methodA(Player p,Player a){
-		System.out.println("TestController.methodA()");
-		System.out.println("name="+p.getName());
-		System.out.println("a = "+a.getName());
-		playerDao.add(p);
-		return "success";
-	}
-//	@RequestMapping(value="/b")
-//	public String methodB(){
-//		return "view";
+//	@RequestMapping(value="/a")
+//	public String methodA(Player p,Player a){
+//		System.out.println("TestController.methodA()");
+//		System.out.println("p.name="+p.getName());
+//		System.out.println("a.name = "+a.getName());
+//		playerDao.add(p);
+//		return "success";
 //	}
+//	@RequestParam("name")
+	@RequestMapping(value="/b")
+	public String methodB(){
+		return "view";
+	}
+	
+	@RequestMapping("/c")
+	public String methodC(Player p){
+		
+		System.out.println("name = "+p.getName());
+		System.out.println("passWord = "+p.getPassWord());
+		
+		return "registed";
+//		return "/WEB-INF/view/registed";
+	}
+	
 
 }
