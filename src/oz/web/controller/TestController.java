@@ -16,7 +16,7 @@ public class TestController {
 	@Resource
 	private IPlayerDao playerDao;
 	
-	@RequestMapping(value="/a" )
+	@RequestMapping(value="/a")
 	public String methodA(Player p,Player a){
 		System.out.println("TestController.methodA()");
 		System.out.println("name="+p.getName());

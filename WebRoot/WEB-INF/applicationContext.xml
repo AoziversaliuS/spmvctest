@@ -33,6 +33,7 @@
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/"/>
 		<property name="suffix" value=".jsp"></property>
+		<!-- <property name="contentType" value="text/html;charset=UTF-8"></property> -->
 		<!-- 使用jstl需配置此属性 -->
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
 	</bean>

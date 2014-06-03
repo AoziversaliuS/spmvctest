@@ -1,4 +1,8 @@
 eclipse.preferences.version=1
+encoding//WebRoot/WEB-INF/view/success.jsp=UTF-8
 encoding//WebRoot/WEB-INF/view/view.ftl=UTF-8
 encoding//WebRoot/index.jsp=UTF-8
 encoding//src/oz/web/controller/TestController.java=UTF-8
+encoding//src/oz/web/dao/IPlayerDao.java=UTF-8
+encoding//src/oz/web/impl/PlayerDaoImpl.java=UTF-8
+encoding//src/oz/web/pojo/Player.java=UTF-8
