@@ -18,7 +18,7 @@ public class PlayerDaoImpl implements IPlayerDao {
 	
 	@Override
 	public void add(Player p) {
-		System.out.println("PlayerDaoImplµÄadd·½·¨");
+		System.out.println("PlayerDaoImpl.add()");
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
 		session.save(p);
@@ -27,17 +27,17 @@ public class PlayerDaoImpl implements IPlayerDao {
 
 	@Override
 	public void update(Player p) {
-		System.out.println("PlayerDaoImplµÄupdate·½·¨");
+		System.out.println("PlayerDaoImplï¿½ï¿½updateï¿½ï¿½ï¿½ï¿½");
 	}
 
 	@Override
 	public void delete(Player p) {
-		System.out.println("PlayerDaoImplµÄdelete·½·¨");
+		System.out.println("PlayerDaoImplï¿½ï¿½deleteï¿½ï¿½ï¿½ï¿½");
 	}
 
 	@Override
 	public Player get(int id) {
-		System.out.println("PlayerDaoImplµÄget·½·¨");
+		System.out.println("PlayerDaoImplï¿½ï¿½getï¿½ï¿½ï¿½ï¿½");
 		return null;
 	}
 
