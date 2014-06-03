@@ -16,6 +16,6 @@
   </head>
   
   <body>
-      进入到뵽FreeMarker中！
+      进入到FreeMarker中！
   </body>
 </html>
