@@ -7,6 +7,9 @@
 .metadata
 bin/
 tmp/
+
+WebRoot/WEB-INF/hib-config.xml
+
 *.tmp
 *.bak
 *.swp
