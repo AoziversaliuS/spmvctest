@@ -10,10 +10,19 @@
     <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
 
   </head>
-  <script type="text/javascript">
-  </script>
+ 
   
   <body>
     文件上传下载<br>
+    <form action="/spmvctest/test/upload.do" enctype="multipart/form-data" method="post">
+    <table>
+		<tr>
+			<td>要上传的文件:</td><td> <input type="file" name="file"> </td>
+		</tr>   
+		<tr>
+			<td> <input type="submit" value="上传"> </td>
+		</tr>  
+    </table>
+    </form>
   </body>
 </html>

@@ -1,11 +1,18 @@
 package oz.web.controller;
 
+import java.io.File;
+import java.io.IOException;
+
 import javax.annotation.Resource;
+import javax.servlet.ServletContext;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.ServletConfigAware;
+import org.springframework.web.context.ServletContextAware;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import oz.web.dao.IPlayerDao;
@@ -13,11 +20,11 @@ import oz.web.pojo.Player;
 
 @Controller
 @RequestMapping("/test")
-public class TestController {
+public class TestController implements ServletContextAware{
 	
 	@Resource
 	private IPlayerDao playerDao;
-	
+	private ServletContext servletContext;
 //	@RequestMapping(value="/a")
 //	public String methodA(Player p,Player a){
 //		System.out.println("TestController.methodA()");
@@ -40,6 +47,34 @@ public class TestController {
 		
 		return "registed";
 //		return "/WEB-INF/view/registed";
+	}
+	
+	@RequestMapping("/upload")
+	public String upload(@RequestParam("file") MultipartFile file){
+		System.out.println("TestController.upload()");
+		if(!file.isEmpty()){
+			String path = servletContext.getRealPath("/uploadfile/");
+			System.out.println("path = "+path);
+			File newFile = new File(path	, file.getOriginalFilename());
+			
+			try {
+				file.transferTo(newFile);
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		return "view";
+		
+	}
+
+	@Override
+	public void setServletContext(ServletContext servletContext) {
+		this.servletContext = servletContext;
 	}
 	
 
