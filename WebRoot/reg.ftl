@@ -2,27 +2,27 @@
 <html>
   <head>
     
-    <title>My JSP 'index.jsp' starting page</title>
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
+    <title>upload.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
   </head>
   
   <body>
     <form action="/spmvctest/test/c" method="post">
     		<table>
     			<tr>
-    				<td>注册成功:</td><td><input type=text name=name />  </td>
+    				<td>玩家名:</td><td><input type=text name=name /></td>
     			</tr>
     			<tr>
-    				<td>用户名:</td><td><input type=text name=passWord /></td>
+    				<td>密码:</td><td><input type=text name=passWord /></td>
     			</tr>
     			<tr>
-    				<td>密码:</td><td> <input type="submit" /> </td>
+    				<td>提交:</td><td> <input type="submit" /> </td>
     			</tr>
     		</table>
+    		
     </form>
   </body>
 </html>
