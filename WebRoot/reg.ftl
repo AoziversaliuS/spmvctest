@@ -14,13 +14,13 @@
     <form action="/spmvctest/test/c" method="post">
     		<table>
     			<tr>
-    				<td>�û���:</td><td><input type=text name=name />  </td>
+    				<td>注册成功:</td><td><input type=text name=name />  </td>
     			</tr>
     			<tr>
-    				<td>����:</td><td><input type=text name=passWord /></td>
+    				<td>用户名:</td><td><input type=text name=passWord /></td>
     			</tr>
     			<tr>
-    				<td>�ύ:</td><td> <input type="submit" /> </td>
+    				<td>密码:</td><td> <input type="submit" /> </td>
     			</tr>
     		</table>
     </form>
