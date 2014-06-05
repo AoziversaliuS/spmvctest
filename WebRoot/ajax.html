@@ -11,6 +11,18 @@
   <script type="text/javascript">
   		function add() {
 			alert( $("#name").val()+"    "+$("#passWord").val());
+			$.ajax({
+				url:"test/ajax.do",
+				data:"name="+$("#name").val()+"&passWord="+$("passWord"),
+				type:"get",
+				dataType:"json",
+				success:function(players){
+				
+					alert("ajax返回");
+				}
+			
+			
+			});
 		}
   </script>
   <body>

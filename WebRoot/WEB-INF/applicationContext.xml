@@ -25,7 +25,16 @@
 	
 	
 	<!-- 启动springmvc的注解功能 完成请求和注解pojo的映射 -->
-	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+			
+			<property name="cacheSeconds" value="0" />
+			<property name="messageConverters">
+				<list>
+						<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>				
+				</list>
+			</property>
+	
+	</bean>
 	
 	<!-- 返回视图处理类 -->
 	

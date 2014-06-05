@@ -2,6 +2,8 @@ package oz.web.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.ServletConfigAware;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.MultipartFile;
@@ -71,6 +74,15 @@ public class TestController implements ServletContextAware{
 		}
 		return "view";
 		
+	}
+	
+	@RequestMapping("/ajax")
+	public @ResponseBody List<Player> ajax(String name,String passWord){
+		System.out.println("TestController.ajax()");
+		System.out.println(" name="+name+"   passWord="+passWord);
+		List<Player> players = new ArrayList<Player>();
+		players.add(new Player(name, passWord));
+		return players;
 	}
 	
 	
