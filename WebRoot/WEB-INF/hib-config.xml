@@ -18,6 +18,8 @@
     http://www.springframework.org/schema/context   
    http://www.springframework.org/schema/context/spring-context-3.1.xsd
 	">
+	
+	<!-- 没联网时下面2行会报错? -->
 	<context:component-scan base-package="oz.web"/>
 	<aop:aspectj-autoproxy/><!-- 支持aop注解 -->
 	
