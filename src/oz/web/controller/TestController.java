@@ -86,6 +86,11 @@ public class TestController implements ServletContextAware{
 	}
 	
 	
+   @RequestMapping("/interceptor")	
+   public String interceptor(){
+	   return "view";
+   }
+	
 	
 	
 	

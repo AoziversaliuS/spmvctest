@@ -24,6 +24,8 @@
 	<mvc:annotation-driven/><!-- spring3.0新注解的支持 -->
 	
 	
+	
+	
 	<!-- 启动springmvc的注解功能 完成请求和注解pojo的映射 -->
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 			
@@ -82,7 +84,13 @@
 	</bean>
 	
 	
-	
+	<mvc:interceptors>
+		<bean  class="oz.web.interceptor.TestInterceptor"/>
+		<mvc:interceptor>
+			<mvc:mapping path="/test/interceptor.do"/>
+			<bean class="oz.web.interceptor.Test2Interceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
 	
 	
 	
