@@ -3,6 +3,7 @@ encoding//WebRoot/WEB-INF/view/registed.ftl=UTF-8
 encoding//WebRoot/WEB-INF/view/success.jsp=UTF-8
 encoding//WebRoot/WEB-INF/view/view.ftl=UTF-8
 encoding//WebRoot/index.jsp=UTF-8
+encoding//WebRoot/js/jquery.js=UTF-8
 encoding//WebRoot/reg.ftl=UTF-8
 encoding//src/oz/web/controller/TestController.java=UTF-8
 encoding//src/oz/web/dao/IPlayerDao.java=UTF-8

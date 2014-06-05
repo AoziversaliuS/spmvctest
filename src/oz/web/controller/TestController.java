@@ -49,6 +49,7 @@ public class TestController implements ServletContextAware{
 //		return "/WEB-INF/view/registed";
 	}
 	
+	
 	@RequestMapping("/upload")
 	public String upload(@RequestParam("file") MultipartFile file){
 		System.out.println("TestController.upload()");
@@ -71,6 +72,14 @@ public class TestController implements ServletContextAware{
 		return "view";
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@Override
 	public void setServletContext(ServletContext servletContext) {

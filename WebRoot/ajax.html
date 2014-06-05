@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ajax.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript">
+  		function add() {
+			alert( $("#name").val()+"    "+$("#passWord").val());
+		}
+  </script>
+  <body>
+    <table id="table">
+    </table>
+    <table>
+	    <tr><td><input type="text" id="name"/> </td></tr>
+		<tr><td><input type="text" id="passWord"/></td></tr>
+		<tr><td><input type="button" value="提交" onclick="add()"/></td></tr>
+    </table>
+  </body>
+</html>
