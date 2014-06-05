@@ -10,15 +10,17 @@
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript">
   		function add() {
-			alert( $("#name").val()+"    "+$("#passWord").val());
 			$.ajax({
 				url:"test/ajax.do",
-				data:"name="+$("#name").val()+"&passWord="+$("passWord"),
+				data:"name="+$("#name").val()+"&passWord="+$("#passWord").val(),
 				type:"get",
 				dataType:"json",
 				success:function(players){
-				
-					alert("ajax返回");
+					$("#table").empty();
+					for(var i=0;i<players.length;i++){
+						$("#table").append("<tr><td>"+players[i].name+"</td>"
+						                                +"<td>"+players[i].passWord+"</td></tr>");
+					}
 				}
 			
 			

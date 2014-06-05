@@ -1,7 +1,10 @@
 package oz.web.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.orm.hibernate3.HibernateTemplate;
@@ -27,18 +30,29 @@ public class PlayerDaoImpl implements IPlayerDao {
 
 	@Override
 	public void update(Player p) {
-		System.out.println("PlayerDaoImpl��update����");
+		System.out.println("PlayerDaoImpl.update()");
 	}
 
 	@Override
 	public void delete(Player p) {
-		System.out.println("PlayerDaoImpl��delete����");
+		System.out.println("PlayerDaoImpl.delete()");
 	}
 
 	@Override
 	public Player get(int id) {
-		System.out.println("PlayerDaoImpl��get����");
+		System.out.println("PlayerDaoImpl.get()");
 		return null;
+	}
+
+	@Override
+	public List<Player> getPlayers() {
+		List<Player> players = null;
+		Session session = sessionFactory.getCurrentSession();
+		session.beginTransaction();
+		Query q = session.createQuery("from Player");
+		players = q.list();
+		session.getTransaction().commit();
+		return players;
 	}
 
 }

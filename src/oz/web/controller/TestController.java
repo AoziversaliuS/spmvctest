@@ -77,11 +77,11 @@ public class TestController implements ServletContextAware{
 	}
 	
 	@RequestMapping("/ajax")
-	public @ResponseBody List<Player> ajax(String name,String passWord){
+	public   @ResponseBody  List<Player> ajax(Player player){
 		System.out.println("TestController.ajax()");
-		System.out.println(" name="+name+"   passWord="+passWord);
-		List<Player> players = new ArrayList<Player>();
-		players.add(new Player(name, passWord));
+		System.out.println(" name="+player.getName()+"   passWord="+player.getPassWord());
+		playerDao.add(player);
+		List<Player> players = playerDao.getPlayers();
 		return players;
 	}
 	
