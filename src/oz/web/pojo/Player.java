@@ -19,22 +19,14 @@ public class Player {
 	private String name;
 	private String passWord;
 	
-	
-	
 	public Player(String name, String passWord) {
 		super();
 		this.name = name;
 		this.passWord = passWord;
 	}
-	
-	
-	
 	public Player() {
 		super();
 	}
-
-
-
 	public int getId() {
 		return id;
 	}
