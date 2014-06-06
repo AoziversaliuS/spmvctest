@@ -8,6 +8,10 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,10 +28,11 @@ import oz.web.pojo.Player;
 @Controller
 @RequestMapping("/test")
 public class TestController implements ServletContextAware{
-	
 	@Resource
 	private IPlayerDao playerDao;
 	private ServletContext servletContext;
+	
+
 //	@RequestMapping(value="/a")
 //	public String methodA(Player p,Player a){
 //		System.out.println("TestController.methodA()");
@@ -72,8 +77,8 @@ public class TestController implements ServletContextAware{
 			
 		}
 		return "view";
-		
 	}
+	
 	
 	@RequestMapping("/ajax")
 	public   @ResponseBody  List<Player> ajax(Player player){
@@ -87,6 +92,31 @@ public class TestController implements ServletContextAware{
 	
    @RequestMapping("/interceptor")	
    public String interceptor(){
+	   return "view";
+   }
+   
+   
+	//测试bean类的注入
+	@Resource//要在bean类中注解上 @Component
+	private Player player;
+   @RequestMapping("/annotationA")
+   public String annotationTest(){
+	   System.out.println("TestController.annotationTest()");
+	   System.out.println("Player = " + this.player);
+	   return "view";
+   }
+   
+   @RequestMapping("/annotationB")
+   public String annotationTest2(Player player){
+	   System.out.println("TestController.annotationTest2()");
+	   System.out.println("Player = " +player);//有值，且是多例的
+	   return "view";
+   }
+   
+   @RequestMapping("/annotationC")
+   public String annotationTest3(@RequestParam(required=false) Player player){
+	   System.out.println("TestController.annotationTest3()");
+	   System.out.println("Player = " +player);//空值！！
 	   return "view";
    }
 	
