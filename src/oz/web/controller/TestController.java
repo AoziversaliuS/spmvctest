@@ -132,7 +132,18 @@ public class TestController implements ServletContextAware{
 	   System.out.println("TestController.redirectB()");
 	   return "view";
    }
-	
+   
+   //请求转发测试：从forward1转发请求到forward2，请求转发url是不会变的
+   @RequestMapping("forward1.do")
+	public String forwardA(){
+	   System.out.println("TestController.forwardA()");
+	   return "forward:forward2.do";
+   }
+   @RequestMapping("forward2.do")
+   public String forwardB(){
+	   System.out.println("TestController.forwardB()");
+	   return "view";
+   }
 	
 	
 	
