@@ -120,11 +120,11 @@ public class TestController implements ServletContextAware{
 	   return "view";
    }
    
-   //重定向测试：从redirect1重定向到redirect2
+   //重定向测试：从redirect1重定向到redirect2,开头加“/”则表示从应用根目录开始
    @RequestMapping("/redirect1.do")
    public String redirectA(){
 	   System.out.println("TestController.redirectA()");
-	   return "redirect:redirect2.do";
+	   return "redirect:/test/redirect2.do";
    }
    
    @RequestMapping("/redirect2.do")
