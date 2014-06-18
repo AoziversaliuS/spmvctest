@@ -119,6 +119,19 @@ public class TestController implements ServletContextAware{
 	   System.out.println("Player = " +player);//空值！！
 	   return "view";
    }
+   
+   //重定向测试：从redirect1重定向到redirect2
+   @RequestMapping("/redirect1.do")
+   public String redirectA(){
+	   System.out.println("TestController.redirectA()");
+	   return "redirect:redirect2.do";
+   }
+   
+   @RequestMapping("/redirect2.do")
+   public String redirectB(){
+	   System.out.println("TestController.redirectB()");
+	   return "view";
+   }
 	
 	
 	
